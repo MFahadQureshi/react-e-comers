@@ -1,15 +1,13 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { auth } from './firebase/config'; // Your Firebase config
+import Products from './Products'; // Adjust the path based on where your Product component is located
+import Header from '../components/Header';
 
-const ProtectedRoute = ({ children }) => {
-  const user = auth.currentUser;
-  
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-
-  return children;
-};
+function Home() {
+  return (
+    <div className="container mx-auto">
+      <Products />
+    </div>
+  );
+}
 
 export default Home;
